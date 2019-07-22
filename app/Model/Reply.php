@@ -9,6 +9,7 @@ use App\User;
 
 class Reply extends Model
 {
+    protected $guarded = [];
     //relation with Like
     public function likes()
     {
