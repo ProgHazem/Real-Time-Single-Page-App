@@ -8,6 +8,10 @@ use Illuminate\Http\Request;
 
 class LikeController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('jwt');
+    }
     // like function
     public function likeIt(Reply $reply)
     {

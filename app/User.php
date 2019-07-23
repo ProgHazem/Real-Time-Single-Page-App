@@ -41,6 +41,11 @@ class User extends Authenticatable implements JWTSubject
         'email_verified_at' => 'datetime',
     ];
 
+    //set mautator for password
+    public function setPasswordAttribute($value) {
+        return $this->attributes['password'] = bcrypt($value);
+    }
+
     public function questions() {
         return $this->hasMany(Question::class);
     }
